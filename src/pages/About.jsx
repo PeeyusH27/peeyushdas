@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import {
-  FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGit, FaGithub, FaLinkedin, FaInstagram, FaEnvelope
+  FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGit, FaGithub, FaLinkedin, FaInstagram, FaEnvelope, FaLinux
 } from 'react-icons/fa';
-import { SiTailwindcss, SiFramer, SiGreensock, SiExpress, SiClerk, SiShadcnui } from 'react-icons/si';
+import { SiTailwindcss, SiFramer, SiGreensock, SiExpress, SiClerk, SiShadcnui, SiRedux, SiMongodb } from 'react-icons/si';
 
 const AboutMe = () => {
   const techIcons = [
@@ -11,15 +11,18 @@ const AboutMe = () => {
     { icon: <FaCss3Alt className="text-blue-500" />, name: 'CSS' },
     { icon: <FaJs className="text-yellow-500" />, name: 'JavaScript' },
     { icon: <FaReact className="text-cyan-400" />, name: 'React' },
+    { icon: <SiRedux className="text-purple-600" />, name: 'Redux' },
     { icon: <SiTailwindcss className="text-sky-500" />, name: 'TailwindCSS' },
     { icon: <SiFramer className="text-pink-500" />, name: 'Framer Motion' },
     { icon: <SiGreensock className="text-green-600" />, name: 'GSAP' },
     { icon: <FaNodeJs className="text-green-500" />, name: 'Node.js' },
     { icon: <SiExpress className="text-gray-700" />, name: 'Express' },
+    { icon: <SiMongodb className="text-green-700" />, name: 'MongoDB' },
     { icon: <SiClerk className="text-blue-500" />, name: 'Clerk' },
     { icon: <SiShadcnui className="text-purple-500" />, name: 'ShadCn' },
     { icon: <FaGit className="text-orange-600" />, name: 'Git' },
     { icon: <FaGithub className="text-black" />, name: 'GitHub' },
+    { icon: <FaLinux className="text-gray-500" />, name: 'Linux' },
   ];
 
   // Variants for stagger effect
@@ -28,7 +31,7 @@ const AboutMe = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1, // Delay between child animations
+        staggerChildren: 0.1,
       },
     },
   };
@@ -73,38 +76,19 @@ const AboutMe = () => {
           variants={containerVariants}
           className='dark:bg-zinc-800 bg-zinc-100/40 p-6 rounded-lg shadow-lg flex justify-evenly text-5xl font-bold'>
 
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col items-center gap-2 cursor-pointer"
-            whileHover={{ scale: 1.2 }}
-            onClick={() => window.open('https://mail.google.com/mail/?view=cm&fs=1&to=peeyushdas27@gmail.com', '_blank')}>
+          <motion.div variants={itemVariants} whileHover={{ scale: 1.2 }}>
             <FaEnvelope className="text-red-600" />
           </motion.div>
 
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col items-center gap-2 cursor-pointer"
-            whileHover={{ scale: 1.2 }}
-            onClick={() => window.open('https://linkedin.com/in/peeyush-chandra-das', '_blank')}
-          >
+          <motion.div variants={itemVariants} whileHover={{ scale: 1.2 }}>
             <FaLinkedin className="text-blue-700" />
           </motion.div>
 
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col items-center gap-2 cursor-pointer"
-            whileHover={{ scale: 1.2 }}
-            onClick={() => window.open('https://github.com/PeeyusH27', '_blank')}
-          >
+          <motion.div variants={itemVariants} whileHover={{ scale: 1.2 }}>
             <FaGithub className="text-black" />
           </motion.div>
 
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col items-center gap-2 cursor-pointer"
-            whileHover={{ scale: 1.2 }}
-            onClick={() => window.open('https://www.instagram.com', '_blank')}
-          >
+          <motion.div variants={itemVariants} whileHover={{ scale: 1.2 }}>
             <FaInstagram className="text-pink-500" />
           </motion.div>
         </motion.div>
@@ -120,7 +104,7 @@ const AboutMe = () => {
           variants={containerVariants}
           className='dark:bg-zinc-800 bg-zinc-100/40 p-6 rounded-lg shadow-lg'>
           <motion.h2 variants={itemVariants} className='text-3xl font-bold mb-4'>Who Am I?</motion.h2>
-          <motion.p variants={itemVariants}>Frontend developer skilled in crafting responsive and user-friendly interfaces. Proficient in JavaScript, React.js, with a strong foundation in UI design principles. Adept at turning design concepts into seamless web applications, ensuring optimal performance and user experience.</motion.p>
+          <motion.p variants={itemVariants}>Frontend developer skilled in crafting responsive and user-friendly interfaces. Proficient in JavaScript, React.js, with a strong foundation in UI design principles.</motion.p>
         </motion.div>
 
         {/* Technologies Section */}

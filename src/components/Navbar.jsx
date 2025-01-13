@@ -15,15 +15,15 @@ const Navbar = () => {
     };
 
     return (
-        <div className='bg-black/30 fixed top-0 left-0 w-full z-50 px-10 md:px-12 lg:px-24 py-3 flex justify-center md:justify-between items-center text-black dark:text-white backdrop-blur-md'>
+        <div className='bg-black/30 w-full z-50 px-10 md:px-12 lg:px-24 py-3 flex justify-center md:justify-between items-center text-black dark:text-white backdrop-blur-md'>
 
             {/* Logo Section */}
-            <div className='text-sm lg:text-3xl font-extrabold ml-24'>Peeyush Chandra Das</div>
+            <div className='text-lg lg:text-3xl font-extrabold ml-24'><Link to='/'>Peeyush Das</Link></div>
 
             {/* Desktop Menu */}
             <div className='hidden md:flex list-none mr-24 font-bold items-center gap-6'>
                 <nav className='flex gap-10 cursor-pointer'>
-                    <Link to='/home'>Home</Link>
+                    <Link to='/'>Home</Link>
                     <Link to='/about'>About</Link>
                     <Link to='/projects'>Projects</Link>
                     <Link to='/resume'>Resume</Link>
@@ -51,9 +51,9 @@ const Navbar = () => {
 
             {/* Mobile Dropdown Menu */}
             {menuOpen && (
-                <div className='absolute top-16 left-0 w-full bg-white/80 dark:bg-black/90 backdrop-blur-md flex flex-col items-center md:hidden z-50 text-black dark:text-white'>
+                <div className='absolute top-16 left-0 w-full bg-white/80 dark:bg-black/90 backdrop-blur-md flex flex-col items-center md:hidden z-70 text-black dark:text-white'>
                     <nav className='list-none w-full text-center font-bold'>
-                        <Link to='/home' className='py-2 border-b border-gray-300 block' onClick={() => setMenuOpen(false)}>Home</Link>
+                        <Link to='/' className='py-2 border-b border-gray-300 block' onClick={() => setMenuOpen(false)}>Home</Link>
                         <Link to='/about' className='py-2 border-b border-gray-300 block' onClick={() => setMenuOpen(false)}>About</Link>
                         <Link to='/projects' className='py-2 border-b border-gray-300 block' onClick={() => setMenuOpen(false)}>Projects</Link>
                         <Link to='/resume' className='py-2 block' onClick={() => setMenuOpen(false)}>Resume</Link>
