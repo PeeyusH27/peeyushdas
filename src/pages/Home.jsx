@@ -21,11 +21,11 @@ const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <div className='h-full w-[90vw] mx-auto flex flex-col sm:flex-row justify-center items-center gap-10 p-6 sm:p-10'>
+    <div className='h-full w-[90vw] mx-auto flex flex-col sm:flex-row justify-center items-center gap-10 p-6 md:mt-10 sm:p-12'>
 
       {/* TEXT CONTENT LEFT */}
       <div className='w-full sm:w-2/3 flex flex-col gap-6 justify-center items-start text-left mx-4 p-6'>
-        <h1 className='text-4xl text-gray-900 dark:text-gray-100 sm:text-5xl lg:text-7xl font-extrabold leading-tight'>
+        <h1 className='text-3xl text-gray-900 dark:text-gray-100 sm:text-5xl lg:text-5xl font-extrabold leading-tight'>
           Hi, I'm Peeyush Das
         </h1>
 
@@ -35,15 +35,20 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, type: "spring", damping: 10, stiffness: 100 }}
           key={currentWord}
-          className='text-xl sm:text-2xl md:text-3xl lg:text-5xl text-gray-900 dark:text-gray-100 font-semibold'
+          className='text-2xl sm:text-2xl md:text-3xl lg:text-3xl text-gray-900 dark:text-gray-100 font-semibold'
         >
           I am {currentWord} 🚀
         </motion.h2>
 
         {/* Description */}
-        <p className='text-base sm:text-lg md:text-xl lg:text-3xl text-black dark:text-gray-300 leading-relaxed'>
+        <p className='text-base sm:text-lg md:text-xl lg:text-2xl font-bold lg:font-normal text-black dark:text-gray-300 leading-relaxed'>
           I specialize in creating dynamic and responsive User Interfaces, web components & applications using
-          <span className="font-bold"> Html, Css, JavaScript, React.js, Next.js,</span> and <span className="font-bold">Tailwind CSS</span>.
+          <span className="font-bold text-red-600"> HTML</span>,
+          <span className="font-bold text-green-600"> CSS</span>,
+          <span className="font-bold text-yellow-500"> JavaScript</span>,
+          <span className="font-bold text-sky-600"> React.js</span>,
+          <span className="font-bold text-white dark:text-gray-400"> Next.js</span>,
+          & <span className="font-bold" style={{ color: "#38B2AC" }}> Tailwind CSS</span>.
         </p>
       </div>
 
@@ -53,7 +58,8 @@ const Home = () => {
           initial={{ opacity: 0, x: 200, scale: 0.1 }}
           animate={{ opacity: 1, y: 0, x: 0, scale: 1.2 }}
           transition={{
-            duration: 5,
+            duration: 1,
+            delay: 0.3,
             type: "spring",
             damping: 10,
             ease: "easeIn",
@@ -66,7 +72,7 @@ const Home = () => {
       </div>
 
       {/* Button Section */}
-      <div className='absolute bottom-10 p-2 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-lg'>
+      <div className='absolute bottom-16 p-2 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-lg'>
         <button onClick={() => navigate('/about')}>About Me</button>
       </div>
     </div>
