@@ -4,7 +4,7 @@ import crypto from "../assets/peeyush_projects/cryptrack.png";
 import dealership from "../assets/peeyush_projects/dealership.png"
 import planets from "../assets/peeyush_projects/planets.png"
 import imagegallery from "../assets/peeyush_projects/imageGallery.png"
-import futurefashion from "../assets/peeyush_projects/futurefashion.png"
+// import futurefashion from "../assets/peeyush_projects/futurefashion.png"
 const projects = [
     {
       "id": 1,
@@ -61,17 +61,17 @@ const projects = [
         "github": "https://github.com/PeeyusH27/PlanetsMotion"
       }
     },
-    {
-      "id": 6,
-      "title": "Future Fashion",
-      "thumbnail": futurefashion,
-      "description": "An animated fashion landing page.",
-      "technologies": ["React", "TailwindCSS", "SwiperJs"],
-      "links": {
-        "web": "https://nike-gsap.vercel.app/",
-        "github": "https://github.com/PeeyusH27/NikeGsap"
-      }
-    },
+    // {
+    //   "id": 6,
+    //   "title": "Future Fashion",
+    //   "thumbnail": futurefashion,
+    //   "description": "An animated fashion landing page.",
+    //   "technologies": ["React", "TailwindCSS", "SwiperJs"],
+    //   "links": {
+    //     "web": "https://nike-gsap.vercel.app/",
+    //     "github": "https://github.com/PeeyusH27/NikeGsap"
+    //   }
+    // },
     {
       "id": 7,
       "title": "Image Gallery",
