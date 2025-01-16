@@ -76,21 +76,21 @@ const AboutMe = () => {
           variants={containerVariants}
           className='dark:bg-zinc-800 bg-zinc-100/40 p-6 rounded-lg shadow-lg flex justify-evenly text-5xl font-bold'>
 
-          <motion.div variants={itemVariants} whileHover={{ scale: 1.2 }}>
+          <motion.a href="https://mail.google.com/mail/?view=cm&fs=1&to=peeyushdas27@gmail.com" target="_blank" rel="noopener noreferrer" variants={itemVariants} whileHover={{ scale: 1.2 }} className="cursor-pointer">
             <FaEnvelope className="text-red-600" />
-          </motion.div>
+          </motion.a>
 
-          <motion.div variants={itemVariants} whileHover={{ scale: 1.2 }}>
+          <motion.a href="https://www.linkedin.com/in/peeyush-chandra-das" target="_blank" rel="noopener noreferrer" variants={itemVariants} whileHover={{ scale: 1.2 }} className="cursor-pointer">
             <FaLinkedin className="text-blue-700" />
-          </motion.div>
+          </motion.a>
 
-          <motion.div variants={itemVariants} whileHover={{ scale: 1.2 }}>
+          <motion.a href="https://github.com/PeeyusH27" target="_blank" rel="noopener noreferrer" variants={itemVariants} whileHover={{ scale: 1.2 }} className="cursor-pointer">
             <FaGithub className="text-black" />
-          </motion.div>
+          </motion.a>
 
-          <motion.div variants={itemVariants} whileHover={{ scale: 1.2 }}>
+          <motion.a href="https://instagram.com" target="_blank" rel="noopener noreferrer" variants={itemVariants} whileHover={{ scale: 1.2 }} className="cursor-pointer">
             <FaInstagram className="text-pink-500" />
-          </motion.div>
+          </motion.a>
         </motion.div>
       </div>
 
