@@ -71,7 +71,7 @@ const ProjectsPage = () => {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-black bg-white/80 py-1 px-3 rounded-lg hover:bg-white"
               >
-                <FaExternalLinkAlt /> Demo
+                <FaExternalLinkAlt /> Live
               </a>
               <a
                 href={project.links.github}
