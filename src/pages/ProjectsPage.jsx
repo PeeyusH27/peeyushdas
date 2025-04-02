@@ -65,7 +65,7 @@ const itemVariants = {
                     rel="noopener noreferrer"
                     className="text-lg flex justify-center items-center gap-2 text-black bg-white/70 py-1 px-2 rounded-lg"
                   >
-                    <FaExternalLinkAlt /> Demo
+                    <FaExternalLinkAlt /> Live
                   </a>
                   <a
                     href={project.links.github}
