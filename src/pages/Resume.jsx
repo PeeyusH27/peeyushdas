@@ -53,7 +53,6 @@ const Resume = () => {
                 className="block mx-auto mt-12 px-8 py-4 bg-blue-600 text-white text-lg rounded-lg hover:bg-blue-700 shadow-md"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                onClick={() => window.open('https://drive.google.com/file/d/1QX7xsNIeebsIQ0FzzbTL0fOElu3c2xVt/view?usp=sharing')}
             >
                 Download Resume
             </motion.button>
