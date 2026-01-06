@@ -44,24 +44,30 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen pt-32 pb-16">
+    <div className="min-h-[100vh] pt-32 pb-16">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
+        {/* Page Title */}
         <motion.div
-          initial="hidden"
-          animate="show"
-          variants={staggerContainer}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16 text-center"
         >
-          <motion.h1
-            variants={staggerItem}
-            className="text-5xl md:text-7xl font-bold mb-6"
-          >
-            Get In Touch
-          </motion.h1>
+          <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold leading-none tracking-tight mb-6">
+            <motion.span
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="bg-gradient-to-r from-red-700 to-red-600 bg-clip-text text-transparent"
+            >
+              Contact
+            </motion.span>
+          </h1>
           <motion.p
-            variants={staggerItem}
-            className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="text-xl md:text-2xl text-subheading max-w-2xl mx-auto"
           >
             Have a project in mind or just want to chat? I&apos;d love to hear from you.
           </motion.p>
@@ -194,7 +200,7 @@ export default function ContactPage() {
             </Card>
 
             {/* Resume Download */}
-            <Card className="p-8 bg-gradient-to-br from-orange-600 to-pink-600 text-white">
+            <Card className="p-8 bg-gradient-to-br from-red-800 to-red-900 text-white">
               <h2 className="text-2xl font-bold mb-4">Download Resume</h2>
               <p className="mb-6 opacity-90">
                 Get a detailed overview of my experience, skills, and accomplishments.
@@ -202,7 +208,7 @@ export default function ContactPage() {
               <Button
                 size="lg"
                 variant="secondary"
-                className="w-full gap-2 bg-white text-orange-600 hover:bg-gray-100"
+                className="w-full gap-2 bg-white text-red-800 hover:bg-gray-100"
                 onClick={() => {
                   // In a real app, this would download the actual resume
                   alert("Resume download would start here. Add your resume PDF to the public folder.");

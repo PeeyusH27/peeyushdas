@@ -62,7 +62,7 @@ export default function HomeContent() {
           </motion.h2>
           <motion.p
             variants={staggerItem}
-            className="text-xl text-muted-foreground mb-12 max-w-2xl"
+            className="text-xl text-subheading mb-12 max-w-2xl"
             style={{ y: descriptionY }}
           >
             A selection of recent projects showcasing my expertise in modern web development
@@ -78,37 +78,38 @@ export default function HomeContent() {
                   key={project.id} 
                   variants={staggerItem}
                   style={{ y: cardParallax }}
+                  className="group"
                 >
-                  <Link href={`/projects/${project.id}`}>
-                    <Card className="group overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
-                    <div className="aspect-video relative overflow-hidden bg-black">
-                      {/* Project Image */}
+                  <Link href={`/projects/${project.id}`} className="block">
+                    {/* Project Image - Larger, no card wrapper */}
+                    <div className="relative overflow-hidden bg-black rounded-lg mb-4 aspect-[16/10]">
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
-                      <div className="p-6">
-                        <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">
-                          {project.title}
-                        </h3>
-                        <p className="text-muted-foreground mb-4 line-clamp-2">
-                          {project.description}
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {project.techStack.slice(0, 3).map((tech) => (
-                            <span
-                              key={tech}
-                              className="text-xs px-3 py-1 rounded-full bg-secondary text-secondary-foreground"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
+
+                    {/* Project Info - Outside the image box */}
+                    <div className="space-y-3">
+                      <h3 className="text-2xl font-bold group-hover:text-red-800 dark:group-hover:text-red-700 transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-subheading leading-relaxed line-clamp-2">
+                        {project.description}
+                      </p>
+                      <div className="flex flex-wrap gap-2 pt-1">
+                        {project.techStack.slice(0, 3).map((tech) => (
+                          <span
+                            key={tech}
+                            className="text-xs px-3 py-1 rounded-full border border-red-800/30 dark:border-red-700/30 text-red-800 dark:text-red-300 bg-red-800/5 dark:bg-red-800/10"
+                          >
+                            {tech}
+                          </span>
+                        ))}
                       </div>
-                    </Card>
+                    </div>
                   </Link>
                 </motion.div>
               );
@@ -132,7 +133,7 @@ export default function HomeContent() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeIn}
-          className="bg-gradient-to-r from-orange-600 to-pink-600 rounded-3xl p-12 md:p-16 text-center text-white"
+          className="bg-gradient-to-r from-red-800 to-red-900 rounded-3xl p-12 md:p-16 text-center text-white"
           style={{
             y: ctaY,
             opacity: ctaOpacity,
@@ -148,7 +149,7 @@ export default function HomeContent() {
             <Button
               size="lg"
               variant="secondary"
-              className="text-lg px-8 bg-white text-orange-600 hover:bg-gray-100"
+              className="text-lg px-8 bg-white text-red-800 hover:bg-gray-100"
             >
               Get In Touch
             </Button>

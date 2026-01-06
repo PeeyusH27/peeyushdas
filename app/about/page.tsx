@@ -33,7 +33,7 @@ import {
 } from "react-icons/si";
 
 const techIcons = [
-  { icon: <FaHtml5 className="text-orange-500" />, name: "HTML" },
+  { icon: <FaHtml5 className="text-red-800" />, name: "HTML" },
   { icon: <FaCss3Alt className="text-blue-500" />, name: "CSS" },
   { icon: <FaJs className="text-yellow-400" />, name: "JavaScript" },
   { icon: <FaReact className="text-cyan-400" />, name: "React" },
@@ -46,7 +46,7 @@ const techIcons = [
   { icon: <SiMongodb className="text-green-600" />, name: "MongoDB" },
   { icon: <SiClerk className="text-blue-400" />, name: "Clerk" },
   { icon: <SiShadcnui className="text-purple-400" />, name: "shadcn/ui" },
-  { icon: <FaGit className="text-orange-600" />, name: "Git" },
+  { icon: <FaGit className="text-red-800" />, name: "Git" },
   { icon: <FaGithub className="text-foreground" />, name: "GitHub" },
   { icon: <FaLinux className="text-muted-foreground" />, name: "Linux" },
 ];
@@ -55,6 +55,25 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen pt-32 pb-20">
       <div className="max-w-7xl mx-auto px-6">
+        {/* Page Title */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-16"
+        >
+          <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold leading-none tracking-tight mb-6">
+            <motion.span
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="bg-gradient-to-r from-red-700 to-red-600 bg-clip-text text-transparent"
+            >
+              About
+            </motion.span>
+          </h1>
+        </motion.div>
+
         {/* Top section: intro + snapshot card */}
         <motion.section
           initial="hidden"
@@ -63,21 +82,21 @@ export default function AboutPage() {
           className="mb-16 grid gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-start"
         >
           <motion.div variants={staggerItem} className="space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full border border-orange-400/40 bg-orange-500/10 px-4 py-1 text-xs font-medium uppercase tracking-[0.3em] text-orange-300">
-              <span className="h-1 w-1 rounded-full bg-orange-400" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-red-700/40 bg-red-800/10 px-4 py-1 text-xs font-medium uppercase tracking-[0.3em] text-red-300">
+              <span className="h-1 w-1 rounded-full bg-red-700" />
               <span>About · Developer</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               Blending{" "}
-              <span className="bg-gradient-to-r from-orange-400 to-yellow-300 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-red-700 to-red-600 bg-clip-text text-transparent">
                 engineering
               </span>{" "}
               with cinematic{" "}
-              <span className="bg-gradient-to-r from-yellow-300 to-orange-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
                 motion design
               </span>
               .
-            </h1>
+            </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
               I&apos;m a frontend-focused full stack developer who loves building
               interfaces that feel as polished as high-end game and cinematic
@@ -109,22 +128,22 @@ export default function AboutPage() {
           </motion.div>
 
           <motion.div variants={staggerItem}>
-            <Card className="relative overflow-hidden border-orange-500/20 bg-gradient-to-br from-orange-500/10 via-background to-background/80 backdrop-blur-xl">
-              <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-orange-500/20 blur-3xl" />
+            <Card className="relative overflow-hidden border-red-800/20 bg-gradient-to-br from-red-800/10 via-background to-background/80 backdrop-blur-xl">
+              <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-red-800/20 blur-3xl" />
               <div className="relative p-6 space-y-6">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.25em] text-orange-300/80 mb-2">
+                  <p className="text-xs uppercase tracking-[0.25em] text-red-300/80 mb-2">
                     Snapshot
                   </p>
                   <p className="text-sm text-muted-foreground">
                     I enjoy working on highly interactive frontends, design
                     systems, and performance-critical experiences. My ideal
                     projects live at the intersection of{" "}
-                    <span className="text-orange-300">design, motion</span> and{" "}
-                    <span className="text-orange-300">engineering</span>.
+                    <span className="text-red-300">design, motion</span> and{" "}
+                    <span className="text-red-300">engineering</span>.
                   </p>
                 </div>
-                <Separator className="bg-orange-500/20" />
+                <Separator className="bg-red-800/20" />
                 <div className="grid grid-cols-2 gap-4 text-sm text-foreground">
                   <div>
                     <p className="text-xs uppercase tracking-wide text-muted-foreground/70">
@@ -152,7 +171,7 @@ export default function AboutPage() {
           </motion.div>
         </motion.section>
 
-        <Separator className="my-12 bg-orange-500/20" />
+        <Separator className="my-12 bg-red-800/20" />
 
         {/* Experience & Education split */}
         <motion.section
@@ -168,27 +187,27 @@ export default function AboutPage() {
               variants={staggerItem}
               className="text-2xl md:text-3xl font-semibold mb-6 flex items-center gap-2"
             >
-              <span className="h-8 w-1 rounded-full bg-gradient-to-b from-orange-500 to-yellow-400" />
+              <span className="h-8 w-1 rounded-full bg-gradient-to-b from-red-800 to-red-900" />
               <span>Experience</span>
             </motion.h2>
             <div className="space-y-4">
               {WORK_EXPERIENCE.map((job) => (
                 <motion.div key={job.id} variants={staggerItem}>
-                  <Card className="relative overflow-hidden border-border/60 bg-background/80 hover:border-orange-500/60 transition-colors">
-                    <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-orange-500 to-yellow-400" />
+                  <Card className="relative overflow-hidden border-border/60 bg-background/80 hover:border-red-800/60 transition-colors">
+                    <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-red-800 to-red-900" />
                     <div className="p-5 pl-6 md:pl-8">
                       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-2">
                         <div>
                           <h3 className="text-lg md:text-xl font-semibold">
                             {job.role}
                           </h3>
-                          <p className="text-sm text-orange-300">
+                          <p className="text-sm text-red-300">
                             {job.company}
                           </p>
                         </div>
                         <Badge
                           variant="secondary"
-                          className="mt-1 md:mt-0 text-xs md:text-sm bg-orange-500/10 border-orange-400/40 text-orange-200"
+                          className="mt-1 md:mt-0 text-xs md:text-sm bg-red-800/10 border-red-700/40 text-red-200"
                         >
                           {job.period}
                         </Badge>
@@ -214,25 +233,25 @@ export default function AboutPage() {
                 variants={staggerItem}
                 className="text-2xl md:text-3xl font-semibold mb-6 flex items-center gap-2"
               >
-                <span className="h-8 w-1 rounded-full bg-gradient-to-b from-orange-500 to-yellow-400" />
+                <span className="h-8 w-1 rounded-full bg-gradient-to-b from-red-800 to-red-900" />
                 <span>Education</span>
               </motion.h2>
               <div className="space-y-4">
                 {EDUCATION.map((edu) => (
                   <motion.div key={edu.id} variants={staggerItem}>
-                    <Card className="p-5 bg-background/80 border-border/60 hover:border-orange-500/60 transition-colors">
+                    <Card className="p-5 bg-background/80 border-border/60 hover:border-red-800/60 transition-colors">
                       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
                         <div>
                           <h3 className="text-lg md:text-xl font-semibold">
                             {edu.degree}
                           </h3>
-                          <p className="text-sm text-orange-300">
+                          <p className="text-sm text-red-300">
                             {edu.institution}
                           </p>
                         </div>
                         <Badge
                           variant="secondary"
-                          className="mt-1 md:mt-0 text-xs md:text-sm bg-orange-500/10 border-orange-400/40 text-orange-200"
+                          className="mt-1 md:mt-0 text-xs md:text-sm bg-red-800/10 border-red-700/40 text-red-200"
                         >
                           {edu.period}
                         </Badge>
@@ -248,7 +267,7 @@ export default function AboutPage() {
                 variants={staggerItem}
                 className="text-2xl md:text-3xl font-semibold mb-4 flex items-center gap-2"
               >
-                <span className="h-8 w-1 rounded-full bg-gradient-to-b from-orange-500 to-yellow-400" />
+                <span className="h-8 w-1 rounded-full bg-gradient-to-b from-red-800 to-red-900" />
                 <span>Certifications</span>
               </motion.h2>
               <motion.div
@@ -259,7 +278,7 @@ export default function AboutPage() {
                   <Badge
                     key={cert}
                     variant="outline"
-                    className="text-xs md:text-sm px-3 py-1 rounded-full border-orange-400/40 text-orange-100 bg-orange-500/5"
+                    className="text-xs md:text-sm px-3 py-1 rounded-full border-red-700/40 text-red-100 bg-red-800/5"
                   >
                     {cert}
                   </Badge>
@@ -269,7 +288,7 @@ export default function AboutPage() {
           </div>
         </motion.section>
 
-        <Separator className="my-12 bg-orange-500/20" />
+        <Separator className="my-12 bg-red-800/20" />
 
         {/* Tech stack icons */}
         <motion.section
@@ -283,7 +302,7 @@ export default function AboutPage() {
             variants={staggerItem}
             className="text-2xl md:text-3xl font-semibold mb-6 flex items-center gap-2"
           >
-            <span className="h-8 w-1 rounded-full bg-gradient-to-b from-orange-500 to-yellow-400" />
+            <span className="h-8 w-1 rounded-full bg-gradient-to-b from-red-800 to-red-900" />
             <span>Tech Stack</span>
           </motion.h2>
           <motion.p
@@ -323,7 +342,7 @@ export default function AboutPage() {
             variants={staggerItem}
             className="text-2xl md:text-3xl font-semibold mb-6 flex items-center gap-2"
           >
-            <span className="h-8 w-1 rounded-full bg-gradient-to-b from-orange-500 to-yellow-400" />
+            <span className="h-8 w-1 rounded-full bg-gradient-to-b from-red-800 to-red-900" />
             <span>Core Strengths</span>
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -343,7 +362,7 @@ export default function AboutPage() {
                     whileInView={{ width: `${skill.level}%` }}
                     viewport={{ once: true }}
                     transition={{ duration: 1, ease: "easeOut", delay: 0.1 }}
-                    className="h-full bg-gradient-to-r from-orange-500 to-yellow-400 rounded-full"
+                    className="h-full bg-gradient-to-r from-red-800 to-red-900 rounded-full"
                   />
                 </div>
               </motion.div>

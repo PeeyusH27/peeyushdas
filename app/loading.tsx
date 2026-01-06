@@ -13,7 +13,7 @@ export default function Loading() {
         {[0, 1, 2].map((index) => (
           <motion.div
             key={index}
-            className="w-4 h-4 bg-gradient-to-r from-orange-600 to-pink-600 rounded-full"
+            className="w-4 h-4 bg-gradient-to-r from-red-800 to-red-900 rounded-full"
             animate={{
               scale: [1, 1.5, 1],
               opacity: [0.5, 1, 0.5],
