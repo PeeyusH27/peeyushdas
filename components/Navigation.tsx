@@ -2,21 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
 import { NAV_LINKS } from "@/constants";
 import { cn } from "@/lib/utils";
 
 export default function Navigation() {
   const pathname = usePathname();
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
   const isHomePage = pathname === "/";
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   // On home page, navbar is part of hero section (not fixed)
   if (isHomePage) {
@@ -80,21 +72,7 @@ export default function Navigation() {
                   })}
                 </div>
 
-                {/* Theme Switcher */}
-                {mounted && (
-                  <motion.button
-                    type="button"
-                    aria-label="Toggle theme"
-                    className="ml-2 inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/60 bg-background/80 shadow-md shadow-black/20 hover:bg-background transition-colors"
-                    whileHover={{ scale: 1.05, rotate: 2 }}
-                    whileTap={{ scale: 0.95, rotate: -2 }}
-                    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                  >
-                    <span className="text-xs font-semibold">
-                      {theme === "dark" ? "☀︎" : "☾"}
-                    </span>
-                  </motion.button>
-                )}
+                {/* Theme switch removed: site is dark-only */}
               </div>
             </div>
           </div>
@@ -164,21 +142,7 @@ export default function Navigation() {
                 })}
               </div>
 
-              {/* Theme Switcher */}
-              {mounted && (
-                <motion.button
-                  type="button"
-                  aria-label="Toggle theme"
-                  className="ml-2 inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/60 bg-background/80 shadow-md shadow-black/20 hover:bg-background transition-colors"
-                  whileHover={{ scale: 1.05, rotate: 2 }}
-                  whileTap={{ scale: 0.95, rotate: -2 }}
-                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                >
-                  <span className="text-xs font-semibold">
-                    {theme === "dark" ? "☀︎" : "☾"}
-                  </span>
-                </motion.button>
-              )}
+              {/* Theme switch removed: site is dark-only */}
             </div>
           </div>
         </div>

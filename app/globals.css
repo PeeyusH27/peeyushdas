@@ -50,43 +50,7 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(0.99 0 0); /* More subtle background */
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  /* Red-800 with black tint theme */
-  --primary: oklch(0.35 0.15 25); /* Red-800 with black tint */
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --subheading: oklch(0.4 0 0); /* grey-700 equivalent */
-  --accent: oklch(0.4 0.16 25); /* Red-800 accent */
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.35 0.15 25); /* Red-800 ring */
-  --chart-1: oklch(0.4 0.16 25); /* Red-800 */
-  --chart-2: oklch(0.35 0.15 25); /* Darker red */
-  --chart-3: oklch(0.3 0.12 25); /* Dark red with black tint */
-  --chart-4: oklch(0.45 0.18 25); /* Lighter red */
-  --chart-5: oklch(0.38 0.15 25); /* Red variant */
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.35 0.15 25);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.35 0.15 25);
-}
-
-.dark {
-  --background: oklch(0.13 0.02 50); /* More subtle dark background */
+  --background: oklch(0.13 0.02 50); /* More subtle dark background (now global) */
   --foreground: oklch(0.98 0.02 90); /* Soft warm white */
   --card: oklch(0.18 0.04 60);
   --card-foreground: oklch(0.98 0.02 90);
@@ -120,6 +84,8 @@
   --sidebar-ring: oklch(0.45 0.18 25);
 }
 
+/* Light theme removed. Dark tokens are now global (root). */
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -128,8 +94,9 @@
     @apply bg-background text-foreground;
   }
   
-  /* Dark mode background gradient: mostly black with subtle red glow */
-  .dark body {
+  /* Background gradient for the dark-only site */
+  body {
+    @apply bg-background text-foreground;
     background-image:
       radial-gradient(circle at top, rgba(153, 27, 27, 0.15) 0%, transparent 40%),
       radial-gradient(circle at 20% 120%, rgba(127, 29, 29, 0.12) 0%, transparent 55%),
@@ -149,27 +116,15 @@
   }
   
   ::-webkit-scrollbar-track {
-    background: oklch(0.97 0 0);
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, oklch(0.4 0.16 25), oklch(0.35 0.15 25));
-    border-radius: 5px;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, oklch(0.35 0.15 25), oklch(0.45 0.18 25));
-  }
-  
-  .dark ::-webkit-scrollbar-track {
     background: oklch(0.205 0 0);
   }
-  
-  .dark ::-webkit-scrollbar-thumb {
+
+  ::-webkit-scrollbar-thumb {
     background: oklch(0.556 0 0);
+    border-radius: 5px;
   }
-  
-  .dark ::-webkit-scrollbar-thumb:hover {
+
+  ::-webkit-scrollbar-thumb:hover {
     background: oklch(0.708 0 0);
   }
 }
