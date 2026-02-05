@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 export default function Navigation() {
   const pathname = usePathname();
-  const isHomePage = pathname === "/";
+  const isHomePage = pathname === "/"; 
 
   // On home page, navbar is part of hero section (not fixed)
   if (isHomePage) {

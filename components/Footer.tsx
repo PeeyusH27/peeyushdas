@@ -11,12 +11,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
-          <div>
+          {/* <div>
             <h3 className="text-xl font-bold mb-4">Portfolio</h3>
             <p className="text-muted-foreground">
               {SITE_CONFIG.description}
             </p>
-          </div>
+          </div> */}
 
           {/* Quick Links */}
           <div>
